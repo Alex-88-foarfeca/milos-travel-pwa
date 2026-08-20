@@ -1,0 +1,310 @@
+:root {
+  --bg: #0b1f33;
+  --bg-card: #12283f;
+  --bg-card-2: #16324d;
+  --accent: #1a73e8;
+  --accent-2: #4fc3f7;
+  --text: #eaf2fb;
+  --text-dim: #9db4c9;
+  --border: #24425e;
+  --danger: #e85d5d;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  height: 100%;
+  overscroll-behavior-y: contain;
+}
+
+body {
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  padding-top: env(safe-area-inset-top);
+}
+
+.app-header {
+  padding: 18px 20px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #123456, var(--bg));
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.app-header h1 span {
+  color: var(--accent-2);
+  font-weight: 400;
+}
+
+.trip-dates {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.view {
+  display: none;
+  padding: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.view.active {
+  display: block;
+}
+
+/* Itinerary */
+
+.day-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.day-header {
+  padding: 12px 16px;
+  background: var(--bg-card-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.day-header .day-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.day-header .day-date {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.day-title {
+  padding: 8px 16px 0;
+  font-size: 13px;
+  color: var(--accent-2);
+}
+
+.activity {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+}
+
+.activity:first-of-type {
+  border-top: none;
+}
+
+.activity-time {
+  flex: 0 0 52px;
+  color: var(--accent-2);
+  font-size: 13px;
+  font-weight: 600;
+  padding-top: 2px;
+}
+
+.activity-body {
+  flex: 1;
+}
+
+.activity-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.activity-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.activity-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+.empty-day {
+  padding: 14px 16px;
+  color: var(--text-dim);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Checklist */
+
+.checklist-add {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.checklist-add input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.checklist-add button {
+  width: 42px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+}
+
+#checklistList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#checklistList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+#checklistList li.checked span.label {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+#checklistList li input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+#checklistList li .label {
+  flex: 1;
+  font-size: 14.5px;
+}
+
+#checklistList li .remove-btn {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 18px;
+  padding: 0 4px;
+}
+
+/* Notes / Budget */
+
+.note-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.note-card .note-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--accent-2);
+  margin-bottom: 6px;
+}
+
+.note-card textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  background: var(--bg-card-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  padding: 8px 10px;
+  font-family: inherit;
+}
+
+.note-card .budget-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.note-card .budget-row input {
+  width: 90px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card-2);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.budget-summary {
+  text-align: center;
+  padding: 14px;
+  font-size: 15px;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+/* Tab bar */
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  padding: 10px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+}
+
+.tab-btn .icon {
+  font-size: 20px;
+}
+
+.tab-btn.active {
+  color: var(--accent-2);
+}

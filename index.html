@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Milos Travel</title>
+<meta name="theme-color" content="#1a73e8" />
+<meta name="description" content="Itinerariu personal pentru vacanta in Milos, Grecia" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Milos <span>Grecia</span></h1>
+  <p class="trip-dates" id="tripDates"></p>
+</header>
+
+<main id="views">
+  <section id="view-itinerary" class="view active">
+    <div id="itineraryList"></div>
+  </section>
+
+  <section id="view-checklist" class="view">
+    <div class="checklist-add">
+      <input type="text" id="checklistInput" placeholder="Adauga un obiect nou..." />
+      <button id="checklistAddBtn">+</button>
+    </div>
+    <ul id="checklistList"></ul>
+  </section>
+
+  <section id="view-notes" class="view">
+    <div id="notesList"></div>
+    <div class="budget-summary" id="budgetSummary"></div>
+  </section>
+</main>
+
+<nav class="tabbar">
+  <button class="tab-btn active" data-view="itinerary">
+    <span class="icon">🗓️</span><span>Itinerariu</span>
+  </button>
+  <button class="tab-btn" data-view="checklist">
+    <span class="icon">✅</span><span>Checklist</span>
+  </button>
+  <button class="tab-btn" data-view="notes">
+    <span class="icon">📝</span><span>Notite</span>
+  </button>
+</nav>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
