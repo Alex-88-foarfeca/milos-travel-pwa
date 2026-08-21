@@ -124,6 +124,15 @@ body {
   font-weight: 500;
 }
 
+.activity-image {
+  display: block;
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
 .activity-desc {
   font-size: 13px;
   color: var(--text-dim);

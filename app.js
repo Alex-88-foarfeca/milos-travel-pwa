@@ -60,6 +60,15 @@ function renderItinerary() {
         title.textContent = act.title;
         body.appendChild(title);
 
+        if (act.image) {
+          const img = document.createElement("img");
+          img.className = "activity-image";
+          img.src = act.image;
+          img.alt = act.title;
+          img.loading = "lazy";
+          body.appendChild(img);
+        }
+
         if (act.desc) {
           const desc = document.createElement("div");
           desc.className = "activity-desc";
