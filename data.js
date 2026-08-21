@@ -1,5 +1,6 @@
 // Datele itinerariului. Editeaza acest fisier cu detaliile reale ale traseului.
 // mapQuery = textul care va fi cautat pe Google Maps la click.
+// tip (pe zi) = incadrat ca sfat/logistica pentru ziua respectiva.
 
 const TRIP = {
   destination: "Milos, Grecia",
@@ -12,6 +13,7 @@ const ITINERARY = [
     date: "2026-08-22",
     weekday: "Sambata",
     title: "Sosire + Nordul insulei",
+    tip: "Nu supraincarca prima zi. Sarakiniko si Papafragas sunt suficient de spectaculoase pentru un debut memorabil, iar seara merita pastrata pentru Adamas.",
     activities: [
       {
         time: "12:00",
@@ -22,29 +24,23 @@ const ITINERARY = [
       {
         time: "13:30",
         title: "Pranz la Mikros Apoplous sau O! Hamos!",
-        desc: "Mikros Apoplous - peste proaspat, priveliste la mare; O! Hamos! - mancare traditionala greceasca. Rezerva din timp, mai ales in sezon.",
+        desc: "Mikros Apoplous - peste si fructe de mare, potrivit pentru primul pranz. O! Hamos! - bucatarie traditionala greceasca, poate fi foarte cautat.",
         mapQuery: "Mikros Apoplous Adamas Milos Greece",
       },
       {
         time: "15:30",
         title: "Sarakiniko",
-        desc: "Plaja lunara alba, 5 min din Adamas - scalda si poze.",
+        desc: "Peisaj alb, sculptat de vant si mare - baie, plimbare si fotografii. Poarta incaltaminte cu aderenta si evita marginile expuse daca bate vantul.",
         mapQuery: "Sarakiniko Beach Milos Greece",
       },
       {
-        time: "17:00",
+        time: "17:30",
         title: "Papafragas",
-        desc: "Canalul marin dintre stanci, 10 min din Sarakiniko.",
+        desc: "Canion ingust in roca vulcanica, cu priveliste dramatica spre mare. Accesul la apa poate fi conditionat de valuri si de starea potecii.",
         mapQuery: "Papafragas Milos Greece",
       },
       {
-        time: "18:00",
-        title: "Pollonia",
-        desc: "Plimbare pe faleza in satul de coasta, aceeasi directie ca Sarakiniko/Papafragas.",
-        mapQuery: "Pollonia Milos Greece",
-      },
-      {
-        time: "19:30",
+        time: "19:00",
         title: "Intoarcere in Adamas",
         desc: "Plimbare pe faleza.",
         mapQuery: "Adamas port, Milos, Greece",
@@ -60,49 +56,56 @@ const ITINERARY = [
   {
     date: "2026-08-23",
     weekday: "Duminica",
-    title: "Sate istorice (Nord-Vest)",
+    title: "Sate istorice + Coasta de Sud",
+    tip: "Aceasta este ziua cea mai plina. Pastreaza flexibilitate: daca zabovesti in Plaka sau Klima, redu timpul la una dintre plajele de dupa-amiaza.",
     activities: [
       {
         time: "09:00",
         title: "Plecare spre Plaka",
-        desc: "Capitala cicladica a insulei, ulite albe.",
+        desc: "",
         mapQuery: "Plaka Milos Greece",
       },
       {
         time: "09:30",
         title: "Plaka - castelul venetian",
-        desc: "Panorame superbe; cafea/gustare la Kri Kri sau Utopia Cafe.",
+        desc: "Capitala traditionala a insulei, alei albe si puncte de belvedere; cafea la Kri Kri sau Utopia Cafe. Urca fara graba si lasa masina la marginea zonei pietonale.",
         mapQuery: "Plaka Castle Milos Greece",
       },
       {
         time: "11:00",
         title: "Klima",
-        desc: "Satul cu garaje de barci colorate (syrmata), 3 km din Plaka.",
+        desc: "Satul cu garaje de barci colorate (syrmata). Mergi incet pe promenada ingusta si respecta spatiile private.",
         mapQuery: "Klima Milos Greece",
       },
       {
         time: "11:45",
         title: "Tripiti",
-        desc: "Catacombele romane + teatrul roman, la cateva minute din Klima.",
+        desc: "Catacombe paleocrestine + teatrul antic cu vedere spre golf. Ia apa si incaltaminte buna; verifica programul sezonier al siturilor.",
         mapQuery: "Tripiti Milos Greece",
       },
       {
         time: "13:00",
         title: "Pranz la Astakas (Klima)",
-        desc: "Vedere la mare.",
+        desc: "Pranz cu vedere la mare, convenabil intre Klima si sud.",
         mapQuery: "Astakas Cafe Restaurant Klima Milos Greece",
       },
       {
-        time: "15:00",
-        title: "Firopotamos",
-        desc: "Sat colorat langa apa, putin aglomerat - aproape de Plaka/Klima.",
-        mapQuery: "Firopotamos Milos Greece",
+        time: "14:30",
+        title: "Firiplaka",
+        desc: "Plaja ampla cu nisip deschis si faleze colorate. Cauta umbra si hidrateaza-te dupa pranz.",
+        mapQuery: "Firiplaka Beach Milos Greece",
+      },
+      {
+        time: "17:00",
+        title: "Paleochori",
+        desc: "Plaja vulcanica cu culori minerale intense - activitatea geotermala se simte aproape de suprafata. Nu sapa in zone fierbinti, nisipul poate fi foarte cald.",
+        mapQuery: "Paleochori Beach Milos Greece",
       },
       {
         time: "20:00",
-        title: "Cina la Gyros of Milos",
-        desc: "Cina casual, rapida si accesibila, in Adamas.",
-        mapQuery: "Gyros of Milos Adamas Greece",
+        title: "Cina la Sirocco (Paleochori)",
+        desc: "Experienta culinara legata de caracterul geotermal al zonei. Rezerva din timp, mai ales in sezon.",
+        mapQuery: "Sirocco Paleochori Milos Greece",
       },
     ],
   },
@@ -110,6 +113,7 @@ const ITINERARY = [
     date: "2026-08-24",
     weekday: "Luni",
     title: "Excursia cu barca",
+    tip: "Traseul exact depinde de vant si de conditiile marii - operatorul poate schimba ordinea opririlor sau portul de plecare pentru siguranta. Ce iei la bord: prosop, costum de baie, SPF 50+, ochelari de soare, sapca, husa impermeabila pentru telefon, un strat subtire pentru vant si, optional, medicament pentru rau de mare.",
     activities: [
       {
         time: "06:00",
@@ -158,46 +162,41 @@ const ITINERARY = [
   {
     date: "2026-08-25",
     weekday: "Marti",
-    title: "Coasta de Sud",
+    title: "Sud-vest + Nord linistit",
+    tip: "",
     activities: [
       {
         time: "09:00",
-        title: "Plecare spre coasta de sud",
+        title: "Plecare spre coasta de sud-vest",
         desc: "",
         mapQuery: "Provatas Beach Milos Greece",
       },
       {
         time: "09:30",
         title: "Provatas sau Agia Kiriaki",
-        desc: "Plaje nisipoase, calme si usor accesibile - scalda de dimineata.",
+        desc: "Baie de dimineata pe plaje nisipoase si calme.",
         mapQuery: "Agia Kiriaki Beach Milos Greece",
       },
       {
         time: "12:00",
-        title: "Firiplaka",
-        desc: "Plaja nisipoasa cu apa turcoaz, usor accesibila - scalda. Cateva minute de Provatas.",
-        mapQuery: "Firiplaka Beach Milos Greece",
+        title: "Firopotamos",
+        desc: "Mic golf cu apa clara, case pescaresti si o bisericuta alba. Parcarea poate fi limitata - nu bloca accesul localnicilor.",
+        mapQuery: "Firopotamos Milos Greece",
       },
       {
-        time: "14:00",
-        title: "Pranz simplu la plaja",
-        desc: "Beach bar-urile din zona Firiplaka/Paleochori.",
-        mapQuery: "Paleochori Beach Milos Greece",
+        time: "13:00",
+        title: "Pranz la Pollonia",
+        desc: "Enalion (fructe de mare) sau Armenaki - alternativa buna. Alege masa aproape de apa.",
+        mapQuery: "Enalion Pollonia Milos Greece",
       },
       {
-        time: "16:30",
-        title: "Paleochori",
-        desc: "Plaja vulcanica cu apa calda geotermala.",
-        mapQuery: "Paleochori Beach Milos Greece",
+        time: "14:30",
+        title: "Plimbare prin Pollonia",
+        desc: "Port pescaresc calm, atmosfera mai linistita decat in Adamas.",
+        mapQuery: "Pollonia Milos Greece",
       },
       {
-        time: "20:00",
-        title: "Cina la Sirocco (Paleochori)",
-        desc: "Mancare gatita cu caldura vulcanica chiar pe plaja. Rezerva din timp, mai ales in sezon.",
-        mapQuery: "Sirocco Paleochori Milos Greece",
-      },
-      {
-        time: "21:30",
+        time: "16:00",
         title: "Intoarcere in Adamas",
         desc: "",
         mapQuery: "Adamas, Milos, Greece",
@@ -208,6 +207,7 @@ const ITINERARY = [
     date: "2026-08-26",
     weekday: "Miercuri",
     title: "Plecare spre Atena si zbor spre Bucuresti",
+    tip: "Marja de siguranta: pastreaza cel putin 60-90 de minute rezerva peste timpul normal pentru predarea masinii, bagaje si deplasarea spre aeroport.",
     activities: [
       {
         time: "09:00",
@@ -233,6 +233,53 @@ const ITINERARY = [
         desc: "Plecare catre aeroportul din Atena pentru zborul de intoarcere.",
         mapQuery: "Athens International Airport",
       },
+    ],
+  },
+];
+
+const GENERAL_TIPS = [
+  {
+    title: "Sfaturi utile",
+    items: [
+      "Rezerva din timp restaurantele foarte cautate si excursia cu barca, mai ales in sezon.",
+      "Porneste devreme spre Sarakiniko si Plaka daca vrei mai putina aglomeratie.",
+      "Nu subestima soarele: SPF ridicat, apa si pauze la umbra.",
+      "La plajele vulcanice, nisipul si roca pot deveni foarte fierbinti.",
+      "Pastreaza mereu o marja de timp in ziua plecarii.",
+      "Nu lasa obiecte de valoare vizibile in masina inchiriata.",
+      "Verifica vantul si starea marii in fiecare dimineata; muta plajele intre zile daca este nevoie.",
+      "Pentru turul cu barca, accepta schimbarea traseului daca echipajul o considera necesara pentru siguranta.",
+      "Fa fotografiile, dar lasa si timp fara telefon: Milos merita trait lent.",
+    ],
+  },
+  {
+    title: "Plan B pentru vant",
+    items: [
+      "Daca bate tare din nord: prioritizeaza coasta de sud (Firiplaka, Paleochori, Provatas, Agia Kiriaki).",
+      "Daca marea e agitata: inlocuieste timpul de plaja cu Plaka, Trypiti, Klima, Pollonia si restaurante.",
+      "Daca turul cu barca se muta: pastreaza luni ca zi flexibila; schimba cu marti doar daca timpul permite in siguranta.",
+    ],
+  },
+  {
+    title: "Fotografii, lumina si ritm",
+    items: [
+      "Dimineata: Plaka, Klima si plajele sudice sunt mai placute inainte de caldura puternica.",
+      "Dupa-amiaza: Sarakiniko capata umbre expresive spre finalul zilei.",
+      "Apus: Plaka e alegerea clasica pentru panorama, dar merge si faleza din Adamas.",
+      "Regula 20/20: aloca ~20 min pentru parcare/orientare la obiectivele populare si lasa 20 min tampon la finalul fiecarei jumatati de zi.",
+    ],
+  },
+  {
+    title: "Informatii practice",
+    items: [
+      "Urgente: 112 (numar european de urgenta).",
+      "Kalimera = Buna dimineata",
+      "Kalispera = Buna seara",
+      "Efharisto = Multumesc",
+      "Parakalo = Va rog / cu placere",
+      "Poso kani? = Cat costa?",
+      "Pou ine...? = Unde este...?",
+      "Logariasmo, parakalo = Nota, va rog",
     ],
   },
 ];

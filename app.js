@@ -91,7 +91,39 @@ function renderItinerary() {
       });
     }
 
+    if (day.tip) {
+      const tip = document.createElement("div");
+      tip.className = "day-tip";
+      tip.textContent = day.tip;
+      card.appendChild(tip);
+    }
+
     container.appendChild(card);
+  });
+}
+
+function renderGeneralTips() {
+  const container = document.getElementById("itineraryTips");
+  if (!container) return;
+  container.innerHTML = "";
+
+  GENERAL_TIPS.forEach((section) => {
+    const details = document.createElement("details");
+    details.className = "tips-section";
+
+    const summary = document.createElement("summary");
+    summary.textContent = section.title;
+    details.appendChild(summary);
+
+    const list = document.createElement("ul");
+    section.items.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+    details.appendChild(list);
+
+    container.appendChild(details);
   });
 }
 
@@ -279,6 +311,7 @@ function setupTabs() {
 
 function init() {
   formatTripDates();
+  renderGeneralTips();
   renderItinerary();
   renderChecklist();
   setupChecklistAdd();
